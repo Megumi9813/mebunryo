@@ -13,7 +13,7 @@ const useContentful = () => {
                 const img = item.fields.image.fields.file.url;
                 return {
                     ...item.fields,
-                    img
+                    img,
                 }
             })
             return sanitizedResponse;

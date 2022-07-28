@@ -1,4 +1,6 @@
 import React from 'react'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 
 function MenuItem({menu}) {
   return (
@@ -15,6 +17,7 @@ function MenuItem({menu}) {
             <div className="price wine_info-item">価格: ￥{menu.price}</div>
             <div className="quantity wine_info-item">在庫数: {menu.quantity}</div>
             <div className="comment wine_info-item">{menu.comment}</div>
+            <div className="richText wine_info-item">{documentToReactComponents(menu.richComment)}</div>
         </div>
         </div>
     </div>
