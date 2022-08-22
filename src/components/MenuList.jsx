@@ -6,7 +6,7 @@ function MenuList({menus}) {
     <div className="MenuList">
         {
           menus.map(menu => (
-            <MenuItem menu={menu} key={menu.id}/>
+            <MenuItem menu={menu} key={menu.name}/>
           ))
         }
     </div>
