@@ -2,8 +2,8 @@ import { createClient } from "contentful";
 
 const useContentful = () => {
     const client = createClient({
-      space: process.env.REACT_APP_CONTENTFUL_SPACE_KEY,
-      accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
+        space: 'tokjfasidhuf',
+        accessToken: 'bDhuMyDNegAiCOB38eSHKrCjI9qHu1VbE2GdEYBGbUM',
     });
 
     const getMenu = async() => {
