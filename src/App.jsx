@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import MenuList from "./components/MenuList";
 import MenuTop from "./components/MenuTop";
 import useContentful from "./useContentful";
 import MenuBottom from "./components/MenuBottom";
+import MenuList from "./components/MenuList";
 
 function App() {
   const [open, setOpen] = useState(false);
   const [menus, setMenus] = useState([]);
   const { getMenu } = useContentful();
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     if (menus.length === 0) {
@@ -17,7 +18,7 @@ function App() {
     } else {
       setLoading(false);
     }
-  });
+  }, );
 
   return (
     <div className="App">

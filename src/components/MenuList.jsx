@@ -6,38 +6,27 @@ import MenuItem from "./MenuItem";
 function MenuList({ menus, open }) {
   const [filteredMenus, setFilteredMenus] = useState(menus);
   const [menuContents, setMenuContents] = useState(menus);
-  const [navMenus, setNavMenus] = useState([
-    {
-      title: "やっぱり赤でしょ〜",
-      isActive: false,
-      type: "赤",
-    },
-    {
-      title: "白ワインな気分♪",
-      isActive: false,
-      type: "白",
-    },
-    {
-      title: "琥珀色ワイン!?",
-      isActive: false,
-      type: "泡",
-    },
-    {
-      title: "イタリア産🇮🇹",
-      isActive: false,
-      type: "イタリア",
-    },
-    {
-      title: "スペイン産🇪🇸",
-      isActive: false,
-      type: "スペイン",
-    },
-    {
-      title: "アルゼンチン産",
-      isActive: false,
-      type: "アルゼンチン",
-    },
-  ]);
+
+  let buttonData = menus.map((item) => ({
+    country: item.country,
+    type: item.type,
+  }));
+  let buttonDataArr = [];
+  for (let value of buttonData) {
+    buttonDataArr.push(Object.values(value));
+  }
+  let countryAndTypeData = Array.from(new Set(buttonDataArr.flat()));
+  let countryAndTypeKey = countryAndTypeData.filter(
+    (element) => element !== "anonymous" && element !== undefined
+  );
+
+  let buttonMenus = countryAndTypeKey.map((key) => ({
+    title: key,
+    isActive: false,
+    type: key,
+  }));
+
+  const [navMenus, setNavMenus] = useState(buttonMenus);
 
   useEffect(() => {
     let tempFilteredMenus = [...menus];
