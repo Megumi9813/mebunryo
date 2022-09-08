@@ -82,6 +82,7 @@ function MenuList({ menus, open }) {
               </li>
             ))}
           </ul>
+          <div className="gradient"></div>
         </div>
       </div>
       {filteredMenus.map((menu) => {

@@ -92,12 +92,12 @@ img {
       z-index: 3;
       button {
         text-align: center;
-        width: 164px;
+        width: 168px;
         border: none;
         background-color: #0654a4;
         border-radius: 5px;
         color: #fffbda;
-        padding: 10px 15px;
+        padding: 16px 15px;
         font-weight: bold;
         margin-bottom: 15px;
         letter-spacing: 0.05em;
@@ -120,6 +120,7 @@ img {
       padding-top: 24px;
       overflow: scroll;
       height: 100vh;
+      padding-bottom: 20vh;
       .button-item {
         margin: 16px;
         .filter_btn {
@@ -129,6 +130,14 @@ img {
           font-weight: bold;
         }
       }
+    }
+    .gradient {
+      background: linear-gradient(to top, #fffbda, transparent);
+      height: 30vh;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
     }
   }
 }
