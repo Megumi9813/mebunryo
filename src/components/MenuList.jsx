@@ -7,15 +7,13 @@ function MenuList({ menus, open }) {
   const [filteredMenus, setFilteredMenus] = useState(menus);
   const [menuContents, setMenuContents] = useState(menus);
 
-  let buttonData = menus.map((item) => ({
-    country: item.country,
-    type: item.type,
-  }));
-  let buttonDataArr = [];
-  for (let value of buttonData) {
-    buttonDataArr.push(Object.values(value));
-  }
-  let countryAndTypeData = Array.from(new Set(buttonDataArr.flat()));
+  let countryData = menus.map((item) => item.country);
+  let typeData = menus.map((item) => item.type);
+
+  countryData.concat(typeData);
+
+  let countryAndTypeData = Array.from(new Set(typeData.concat(countryData)));
+  
   let countryAndTypeKey = countryAndTypeData.filter(
     (element) => element !== "anonymous" && element !== undefined
   );
@@ -89,7 +87,6 @@ function MenuList({ menus, open }) {
       {filteredMenus.map((menu) => {
         return <MenuItem menu={menu} key={menu.name} />;
       })}
-      {console.log(filteredMenus)}
     </div>
   );
 }

@@ -115,19 +115,15 @@ img {
   bottom: 0;
   z-index: 2;
   .button_container {
-    max-width: 180px;
-    margin: 0 auto;
     .button-list {
-      margin: 0 8px;
       list-style: none;
-      padding-top: 32px;
+      padding-top: 24px;
+      overflow: scroll;
+      height: 100vh;
       .button-item {
-        margin: 16px 0;
+        margin: 16px;
         .filter_btn {
-          // color: #d03c21;
           width: 100%;
-          // border: 2px solid #d03c21;
-          // background-color: #fffbda;
           border-radius: 5px;
           padding: 16px 0;
           font-weight: bold;
