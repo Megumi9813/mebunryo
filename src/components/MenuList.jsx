@@ -7,16 +7,24 @@ function MenuList({ menus, open }) {
   const [filteredMenus, setFilteredMenus] = useState(menus);
   const [menuContents, setMenuContents] = useState(menus);
 
-  let countryData = menus.map((item) => item.country);
-  let typeData = menus.map((item) => item.type);
+  let countryData = menus.map((item) => item.country + ' 産');
+  let typeData = menus.map((item) => item.type + ' ワイン');
 
   countryData.concat(typeData);
 
   let countryAndTypeData = Array.from(new Set(typeData.concat(countryData)));
+
+  console.log({countryAndTypeData});
   
   let countryAndTypeKey = countryAndTypeData.filter(
-    (element) => element !== "anonymous" && element !== undefined
+    (element) =>
+      element !== "anonymous 産" &&
+      element !== "undefined ワイン" &&
+      element !== "anonymous ワイン" &&
+      element !== "undefined 産"
   );
+
+  console.log({ countryAndTypeKey });
 
   let buttonMenus = countryAndTypeKey.map((key) => ({
     title: key,
@@ -44,6 +52,7 @@ function MenuList({ menus, open }) {
         let isMenuActive = false;
 
         for (let type of activeTypes) {
+          console.log(type + '産');
           if (menu.type === type || menu.country === type) {
             isMenuActive = true;
           }
