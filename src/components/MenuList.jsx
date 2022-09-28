@@ -34,7 +34,7 @@ function MenuList({ menus, open }) {
   )
 
   let typeButtonMenus = filteredTypeData.map((key) => ({
-    title: key + "ワイン",
+    title: key,
     isActive: false,
     type: key,
   }));

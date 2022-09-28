@@ -10,7 +10,6 @@ function App() {
   const [menus, setMenus] = useState([]);
   const { getMenu } = useContentful();
   const [loading, setLoading] = useState(true);
-  
 
   useEffect(() => {
     if (menus.length === 0) {
