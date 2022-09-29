@@ -17,7 +17,7 @@ function MenuItem({ menu }) {
           </div>
           <div className="importer wine_info-item">輸入者: {menu.importer}</div>
           {/* <div className="price wine_info-item">価格: ￥{menu.price}</div> */}
-          <div className="price wine_info-item">価格: ￥{menu.priceOfAlcohol}</div>
+          <div className="price wine_info-item">価格: {menu.priceOfAlcohol}</div>
           <div className="quantity wine_info-item">在庫数: {menu.quantity}</div>
           <div className="comment wine_info-item">{menu.comment}</div>
           <div className="richText wine_info-item">

@@ -9,7 +9,7 @@ function MenuBottom({open, setOpen}) {
           open ? (
             <button className='filter' onClick={() => setOpen(!open)}>絞り込み完了 !</button>
           ) : (
-            <button className='filter' onClick={() => setOpen(!open)}>ワインを絞り込む</button>
+            <button className='filter' onClick={() => setOpen(!open)}>絞り込む</button>
           )
         }
       </div>
